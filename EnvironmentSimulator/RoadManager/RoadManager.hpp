@@ -774,8 +774,8 @@ namespace roadmanager
 		void SetRoute(Route *route);
 		void CalcRoutePosition();
 		const roadmanager::Route* GetRoute() const { return route_; }
-		roadmanager::Route* GetRoute() { return route_; }
-		roadmanager::Trajectory* GetTrajectory() { return trajectory_; }
+		Route* GetRoute() { return route_; }
+		Trajectory* GetTrajectory() { return trajectory_; }
 
 		void SetTrajectory(Trajectory* trajectory);
 

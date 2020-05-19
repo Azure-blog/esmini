@@ -41,7 +41,7 @@ namespace scenarioengine
 		// RoadNetwork
 		void parseRoadNetwork(RoadNetwork &roadNetwork);
 		void parseOSCFile(OSCFile &file, pugi::xml_node fileNode);
-		roadmanager::Trajectory* ScenarioReader::parseTrajectory(pugi::xml_node node);
+		roadmanager::Trajectory* parseTrajectory(pugi::xml_node node);
 
 		// ParameterDeclarations
 		void parseGlobalParameterDeclarations();
