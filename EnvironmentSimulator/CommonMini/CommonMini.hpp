@@ -33,14 +33,14 @@
 #endif
 
 #ifdef _WIN32
-   #define __FILENAME__ (strrchr(__FILE__, '\\') ? strrchr(__FILE__, '\\') + 1 : __FILE__)
+   #define __FILENAME__ (strrchr(__FILE__, '\\') ? strrchr(__FILE__, '\\') + 1 : __FILE__) 
 #else
-   #define __FILENAME__ (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : __FILE__)
+   #define __FILENAME__ (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : __FILE__)  //查找文件
 #endif
 
 #define SMALL_NUMBER (1E-10)
 #define LARGE_NUMBER (1E+10)
-#define SIGN(X) ((X<0)?-1:1)
+#define SIGN(X) ((X<0)?-1:1)  //x>0 x=1,x<0,x=-1;
 #define MAX(x, y) (y > x ? y : x)
 #define MIN(x, y) (y < x ? y : x)
 
