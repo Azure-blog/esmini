@@ -11,9 +11,9 @@
  */
 
 #pragma once
-
+//编译一次
 #ifdef WIN32
-	#define SE_DLL_API __declspec(dllexport)
+	#define SE_DLL_API __declspec(dllexport) //SE_DLL_API函数的调用接口，导出函数头，在win下
 #else
 	#define SE_DLL_API  // Leave empty on Mac
 #endif
@@ -22,9 +22,9 @@
 
 typedef struct
 {
-	int id;					  // Automatically generated unique object id 
-	int model_id;             // Id to control what 3D model to represent the vehicle - see carModelsFiles_[] in scenarioenginedll.cpp
-	int control;		      // 0= undefined, 1=internal, 2=external, 3=hybrid_external, 4=hybrid_ghost
+	int id;		        // Automatically generated unique object id 
+	int model_id;          // Id to control what 3D model to represent the vehicle - see carModelsFiles_[] in scenarioenginedll.cpp
+	int control;	      // 0= undefined, 1=internal, 2=external, 3=hybrid_external, 4=hybrid_ghost
 	float timestamp;
 	float x;
 	float y;
@@ -37,8 +37,8 @@ typedef struct
 	int laneId;
 	float laneOffset;
 	float s;
-	float speed;
-} SE_ScenarioObjectState; 
+	float speed;         //只声明成员变量，不声明函数
+} SE_ScenarioObjectState;    //SE_ScenariosObjectState是这个结构体的名称
 
 typedef struct
 {
@@ -51,7 +51,7 @@ typedef struct
 	float curvature;		// road curvature at steering target point
 	float speed_limit;		// speed limit given by OpenDRIVE type entry
 	float width;            // with of the lane 
-} SE_LaneInfo;
+} SE_LaneInfo;                 //车道信息
 
 typedef struct
 {
@@ -68,11 +68,11 @@ typedef struct
 	float trail_heading;	// trail heading (only when used for trail lookups, else equals road_heading)
 	float curvature;		// road curvature at steering target point
 	float speed_limit;		// speed limit given by OpenDRIVE type entry
-} SE_RoadInfo;
+} SE_RoadInfo;                  //道路信息
 
 
-#ifdef __cplusplus
-extern "C"
+#ifdef __cplusplus   		 //如果是cpp文件
+extern "C"  			//符合c语言的编译，即本本部分按照c语言的规则进行编译
 {
 #endif
 	/**
